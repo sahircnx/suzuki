@@ -238,7 +238,7 @@
 
   .tabs-benefits .tabs-benefits-list button.tabs-benefits-tab {
     padding: 20px 0;
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .tabs-benefits .tabs-benefits-panel > div {
@@ -265,9 +265,9 @@
     font-size: 22px;
   }
 
-  .tabs-benefits .tabs-benefits-panel a.button:any-link {
-    font-size: 20px;
+  .tabs-benefits .tabs-benefits-panel > div > p > a:any-link {
     padding: 18px 35px;
+    font-size: 20px;
   }
 
   /* Promo cards two across */
