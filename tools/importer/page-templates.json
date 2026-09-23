@@ -1,0 +1,137 @@
+{
+  "templates": [
+    {
+      "name": "more-from-us",
+      "urls": [
+        "https://www.marutisuzuki.com/more-from-us/maruti-suzuki-rewards"
+      ],
+      "representativeUrl": "https://www.marutisuzuki.com/more-from-us/maruti-suzuki-rewards",
+      "description": "",
+      "blocks": [
+        {
+          "name": "carousel-hero",
+          "instances": [
+            ".bannerMainContainer .topBannerMain",
+            ".bannerMainContainer"
+          ]
+        },
+        {
+          "name": "columns-cta",
+          "instances": [
+            ".enrollBtns"
+          ]
+        },
+        {
+          "name": "tabs-benefits",
+          "instances": [
+            ".tabbingSec .whtBg",
+            "#myTab"
+          ]
+        },
+        {
+          "name": "columns-feature",
+          "instances": [
+            ".featureVendorMain"
+          ]
+        },
+        {
+          "name": "cards-video",
+          "instances": [
+            ".recentVideoMain .recentVideoSlider"
+          ]
+        }
+      ],
+      "urlPattern": "/more-from-us/*",
+      "sections": [
+        {
+          "id": "rc3",
+          "name": "hero-banner",
+          "selector": [
+            ".bannerMainContainer"
+          ],
+          "style": null,
+          "blocks": [
+            "carousel-hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc4",
+          "name": "cta-buttons",
+          "selector": [
+            ".enrollBtns"
+          ],
+          "style": "dark",
+          "blocks": [
+            "columns-cta"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc5",
+          "name": "streamlined-heading",
+          "selector": [
+            ".rewardSection",
+            "#tabbingSecInner"
+          ],
+          "style": "dark",
+          "blocks": [],
+          "defaultContent": [
+            ".rewardSection"
+          ]
+        },
+        {
+          "id": "rc7_rc8",
+          "name": "benefits-tabs",
+          "selector": [
+            ".tabbingSec .whtBg"
+          ],
+          "style": "highlight",
+          "blocks": [
+            "tabs-benefits"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc9",
+          "name": "app-partner-features",
+          "selector": [
+            ".featureVendorMain"
+          ],
+          "style": "dark",
+          "blocks": [
+            "columns-feature"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc10",
+          "name": "latest-videos-heading",
+          "selector": [
+            ".recentVideoMain .title"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".recentVideoMain .title"
+          ]
+        },
+        {
+          "id": "rc11",
+          "name": "video-cards",
+          "selector": [
+            ".recentVideoMain .recentVideoSlider"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-video"
+          ],
+          "defaultContent": []
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "projectType": "da"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "status": "success",
+  "url": "https://www.marutisuzuki.com/more-from-us/maruti-suzuki-rewards",
+  "path": "more-from-us/maruti-suzuki-rewards",
+  "timestamp": "2026-09-23T17:34:36.725Z",
+  "title": "Maruti Suzuki Rewards | Loyalty Reward Program",
+  "template": "more-from-us",
+  "blocks": [
+    "carousel-hero",
+    "carousel-hero",
+    "columns-cta",
+    "tabs-benefits",
+    "tabs-benefits",
+    "tabs-benefits",
+    "tabs-benefits",
+    "tabs-benefits",
+    "columns-feature",
+    "cards-video"
+  ]
+}

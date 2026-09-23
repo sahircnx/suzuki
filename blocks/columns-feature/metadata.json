@@ -1,0 +1,10 @@
+{
+  "variantName": "columns-feature",
+  "baseBlock": "columns",
+  "visualCharacteristics": "A two-column feature layout on a solid dark background. Each column holds a heading, supporting text, and a stack of feature/benefit items (app features on the left, partner-benefit badges on the right).",
+  "contentPattern": "Columns (two columns): one row with two columns — [heading + text + feature items | heading + badge items].",
+  "usage": "A dark feature/benefits section presenting two related content regions side by side, distinct from a CTA button row.",
+  "canonicalModel": "standalone",
+  "options": [],
+  "memberVariantIds": ["columns-feature"]
+}

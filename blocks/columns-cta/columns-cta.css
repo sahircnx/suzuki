@@ -1,0 +1,36 @@
+.columns-cta > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.columns-cta > div > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.columns-cta img {
+  width: auto;
+  max-height: 24px;
+}
+
+.columns-cta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (width >= 600px) {
+  .columns-cta > div {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .columns-cta > div > div {
+    flex: 0 1 auto;
+  }
+}

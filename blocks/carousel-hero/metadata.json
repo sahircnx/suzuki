@@ -1,0 +1,10 @@
+{
+  "variantName": "carousel-hero",
+  "baseBlock": "carousel",
+  "visualCharacteristics": "Full-width rotating promotional hero banner. Image-only slides that fill the viewport width, with prev/next navigation arrows and dot indicators. Slide artwork carries baked-in headline text.",
+  "contentPattern": "One row per slide; each row has a single image cell (optional text/content cell). Here all slides are image-only.",
+  "usage": "Top-of-page promotional hero carousel rotating through multiple full-bleed banner images.",
+  "canonicalModel": "standalone",
+  "options": [],
+  "memberVariantIds": ["carousel-hero"]
+}
