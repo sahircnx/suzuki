@@ -1,0 +1,115 @@
+/* Full-bleed rotating hero banner (Maruti Suzuki Rewards).
+   Image-only slides fill the viewport width at a 2.4:1 ratio, matching the
+   source (1440x600). Navigation is a row of pill dots overlaid bottom-left;
+   the source hides the prev/next arrows. */
+
+/* full-width: neutralise the section max-width / padding cap */
+.carousel-hero-wrapper {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.carousel-hero {
+  position: relative;
+}
+
+.carousel-hero .carousel-hero-slides-container {
+  position: relative;
+}
+
+.carousel-hero .carousel-hero-slides,
+.carousel-hero .carousel-hero-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-hero .carousel-hero-slides {
+  display: flex;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow: scroll clip;
+}
+
+.carousel-hero .carousel-hero-slides::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-hero .carousel-hero-slide {
+  position: relative;
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  width: 100%;
+  aspect-ratio: 12 / 5;
+}
+
+/* image fills the whole slide */
+.carousel-hero .carousel-hero-slide .carousel-hero-slide-image {
+  position: absolute;
+  inset: 0;
+}
+
+.carousel-hero .carousel-hero-slide .carousel-hero-slide-image picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-hero .carousel-hero-slide .carousel-hero-slide-image picture > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* slides are image-only: the empty content cell must not render a box */
+.carousel-hero .carousel-hero-slide .carousel-hero-slide-content {
+  display: none;
+}
+
+/* source hides the prev/next arrows; dots are the only control */
+.carousel-hero .carousel-hero-navigation-buttons {
+  display: none;
+}
+
+/* pill dot indicators, overlaid at the bottom-left of the banner */
+.carousel-hero .carousel-hero-slide-indicators {
+  position: absolute;
+  bottom: 22px;
+  left: 16px;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  line-height: 0;
+}
+
+.carousel-hero .carousel-hero-slide-indicator {
+  margin: 0;
+}
+
+.carousel-hero .carousel-hero-slide-indicator button {
+  width: 35px;
+  height: 10px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--brand-color);
+  border-radius: 10px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.carousel-hero .carousel-hero-slide-indicator button:disabled,
+.carousel-hero .carousel-hero-slide-indicator button[aria-current='true'] {
+  background-color: var(--brand-color);
+  cursor: default;
+}
+
+@media (width >= 900px) {
+  .carousel-hero .carousel-hero-slide-indicators {
+    bottom: 30px;
+    left: 100px;
+  }
+}

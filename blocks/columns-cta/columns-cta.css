@@ -1,0 +1,76 @@
+/* columns-cta: horizontal row of CTA buttons (icon + label) on a dark brand band.
+   Source: white buttons, brand-blue text/border, 7px radius, icon at far left. */
+
+.columns-cta > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.columns-cta > div > div {
+  margin: 0;
+  text-align: center;
+}
+
+.columns-cta p {
+  margin: 0;
+}
+
+/* the CTA button (anchor wraps icon + label) */
+.columns-cta a:any-link {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 18px 30px 18px 70px;
+  border: 2px solid var(--brand-color);
+  border-radius: 7px;
+  background-color: #fff;
+  font-family: var(--body-font-family);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* override the .section.dark white-link rule (higher specificity) */
+main .section.dark .columns-cta a:any-link {
+  color: var(--brand-color);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.columns-cta a:hover {
+  text-decoration: none;
+}
+
+/* left-aligned icon, vertically centered inside the button */
+.columns-cta a picture {
+  position: absolute;
+  left: 22px;
+  top: 50%;
+  display: block;
+  transform: translateY(-50%);
+  line-height: 0;
+}
+
+.columns-cta a img {
+  display: block;
+  width: auto;
+  height: 33px;
+  max-width: none;
+  margin: 0;
+}
+
+@media (width >= 900px) {
+  .columns-cta > div {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .columns-cta > div > div {
+    flex: 0 0 auto;
+  }
+}

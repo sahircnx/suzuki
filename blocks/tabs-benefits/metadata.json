@@ -1,0 +1,10 @@
+{
+  "variantName": "tabs-benefits",
+  "baseBlock": "tabs",
+  "visualCharacteristics": "A tabbed interface presented inside a white rounded card panel over a colored background. A horizontal row of tab labels sits above a content panel that swaps as tabs are selected. Panels contain feature grids, CTAs, and promo cards.",
+  "contentPattern": "Tabs: one row per tab with two columns — the first cell is the tab label, the second cell is that tab's panel content.",
+  "usage": "A benefits/overview section that organizes rich content (feature grids, CTAs, promo cards) into switchable tabs within a card panel.",
+  "canonicalModel": "standalone",
+  "options": [],
+  "memberVariantIds": ["tabs-benefits"]
+}

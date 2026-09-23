@@ -1,0 +1,10 @@
+{
+  "variantName": "cards-video",
+  "baseBlock": "cards",
+  "visualCharacteristics": "A row of three video cards on a white background. Each card shows a video thumbnail image with a centered play-button overlay, followed by a heading and short description. Thumbnails link out to embedded videos.",
+  "contentPattern": "Cards: one row per card with two cells — [linked thumbnail image | heading + description].",
+  "usage": "A 'latest videos' section presenting a small grid of video thumbnail cards that link to video content.",
+  "canonicalModel": "standalone",
+  "options": [],
+  "memberVariantIds": ["cards-video"]
+}

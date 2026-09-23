@@ -1,0 +1,10 @@
+{
+  "variantName": "columns-cta",
+  "baseBlock": "columns",
+  "visualCharacteristics": "A horizontal row of CTA buttons on a dark band, each button pairing a small icon with a text label (e.g. Enroll Now, Download App, Download Brochure). Buttons are centered and evenly spaced.",
+  "contentPattern": "Columns (three columns): one row with three columns, each column containing an icon image plus a linked label.",
+  "usage": "A prominent call-to-action button row placed on a solid dark section background, directly beneath a hero.",
+  "canonicalModel": "standalone",
+  "options": [],
+  "memberVariantIds": ["columns-cta"]
+}
