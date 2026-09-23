@@ -1,57 +1,292 @@
+/* tabs-benefits — Maruti Suzuki Rewards benefits tabs
+   Values extracted from source .tabbingSec (getComputedStyle).
+   Sits inside .section.highlight white card (global styles). */
+
+/* ---------- Tab list ---------- */
 .tabs-benefits .tabs-benefits-list {
   display: flex;
-  gap: 0.5ch;
-  max-width: 100%;
-  font-size: var(--body-font-size-xs);
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 24px;
+  margin: 0 0 8px;
+  padding: 10px 0 0;
+  border-bottom: 1px solid rgb(237 237 237);
   overflow-x: auto;
 }
 
-@media (width >= 600px) {
-  .tabs-benefits .tabs-benefits-list {
-    font-size: var(--body-font-size-s);
-  }
+.tabs-benefits .tabs-benefits-list button.tabs-benefits-tab {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 16px 0;
+  border: 0;
+  border-bottom: 5px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: rgb(112 123 142);
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
 }
 
+.tabs-benefits .tabs-benefits-list button.tabs-benefits-tab p {
+  margin: 0;
+}
+
+.tabs-benefits .tabs-benefits-list button.tabs-benefits-tab:hover {
+  color: var(--brand-color);
+}
+
+.tabs-benefits .tabs-benefits-list button.tabs-benefits-tab[aria-selected="true"] {
+  color: var(--brand-color);
+  border-bottom-color: var(--brand-color);
+  cursor: default;
+}
+
+/* ---------- Panel ---------- */
+.tabs-benefits .tabs-benefits-panel {
+  padding: 0;
+  border: 0;
+  overflow: visible;
+}
+
+.tabs-benefits .tabs-benefits-panel[aria-hidden="true"] {
+  display: none;
+}
+
+/* Inner content cell */
+.tabs-benefits .tabs-benefits-panel > div {
+  padding: 24px 0;
+}
+
+/* ---------- Feature grid (Program Overview) ---------- */
+
+/* Two feature lists rendered side by side as two columns */
+.tabs-benefits .tabs-benefits-panel > div > ul:first-of-type,
+.tabs-benefits .tabs-benefits-panel > div > ul:nth-of-type(2) {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tabs-benefits .tabs-benefits-panel > div > ul li {
+  margin: 0 0 28px;
+}
+
+.tabs-benefits .tabs-benefits-panel > div > ul li h3 {
+  margin: 0 0 5px;
+  color: var(--brand-color);
+  font-family: var(--body-font-family);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.tabs-benefits .tabs-benefits-panel > div > ul li p {
+  margin: 0;
+  color: rgb(0 0 0);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* ---------- Terms + CTA ---------- */
+/* stylelint-disable-next-line no-descending-specificity */
+.tabs-benefits .tabs-benefits-panel > div > p {
+  margin: 0;
+  color: rgb(102 102 102);
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* "View All Benefits" CTA button (standalone <p><a> after the feature grid) */
+.tabs-benefits .tabs-benefits-panel > div > p:last-of-type {
+  clear: both;
+  margin: 24px 0 0;
+  text-align: center;
+}
+
+.tabs-benefits .tabs-benefits-panel > div > p > a:any-link {
+  display: inline-block;
+  margin: 24px 0 0;
+  padding: 16px 35px;
+  border: 2px solid var(--brand-color);
+  border-radius: 7px;
+  background: var(--brand-color);
+  color: #fff;
+  font-family: var(--body-font-family);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-transform: none;
+  text-decoration: none;
+  white-space: normal;
+}
+
+.tabs-benefits .tabs-benefits-panel > div > p > a:any-link:hover {
+  background: var(--link-hover-color);
+  border-color: var(--link-hover-color);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ---------- Promo cards ---------- */
+.tabs-benefits .tabs-benefits-panel > div > ul:last-of-type {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin: 40px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tabs-benefits .tabs-benefits-panel > div > ul:last-of-type > li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 340px;
+  margin: 0;
+  padding: 32px;
+  border-radius: 12px;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* Card background image */
+.tabs-benefits .tabs-benefits-panel > div > ul:last-of-type > li p:first-child {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  z-index: 0;
+}
+
+.tabs-benefits .tabs-benefits-panel > div > ul:last-of-type > li p:first-child picture,
+.tabs-benefits .tabs-benefits-panel > div > ul:last-of-type > li p:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Purple gradient overlay for text legibility */
+.tabs-benefits .tabs-benefits-panel > div > ul:last-of-type > li::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgb(46 52 146 / 15%) 0%, rgb(46 52 146 / 70%) 100%);
+}
+
+.tabs-benefits .tabs-benefits-panel > div > ul:last-of-type > li h3 {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 16px;
+  color: #fff;
+  font-family: var(--body-font-family);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: none;
+}
+
+.tabs-benefits .tabs-benefits-panel > div > ul:last-of-type > li p:not(:first-child) {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+}
+
+.tabs-benefits .tabs-benefits-panel > div > ul:last-of-type > li a:any-link {
+  display: inline-block;
+  padding: 14px 35px;
+  border-radius: 7px;
+  background: #fff;
+  color: var(--brand-color);
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: none;
+  text-decoration: none;
+}
+
+.tabs-benefits .tabs-benefits-panel > div > ul:last-of-type > li a.button:any-link {
+  margin: 0;
+  border: 0;
+  background: #fff;
+  color: var(--brand-color);
+}
+
+.tabs-benefits .tabs-benefits-panel > div > ul:last-of-type > li a:any-link:hover {
+  background: rgb(244 245 250);
+  color: var(--brand-color);
+}
+
+/* ---------- Desktop layout ---------- */
 @media (width >= 900px) {
   .tabs-benefits .tabs-benefits-list {
-    font-size: var(--body-font-size-m);
+    justify-content: center;
+    gap: 64px;
   }
-}
 
-.tabs-benefits .tabs-benefits-list button {
-  flex: 0 0 max-content;
-  margin: 0;
-  border: 1px solid #dadada;
-  border-radius: 0;
-  padding: 0.5em;
-  background-color: var(--light-color);
-  color: initial;
-  font-weight: bold;
-  line-height: unset;
-  text-align: initial;
-  text-overflow: unset;
-  overflow: unset;
-  white-space: unset;
-  transition: background-color 0.2s;
-}
+  .tabs-benefits .tabs-benefits-list button.tabs-benefits-tab {
+    padding: 20px 0;
+    font-size: 18px;
+  }
 
-.tabs-benefits .tabs-benefits-list button p {
-  margin: 0;
-}
+  .tabs-benefits .tabs-benefits-panel > div {
+    padding: 40px 32px 0;
+  }
 
-.tabs-benefits .tabs-benefits-list button[aria-selected='true'] {
-  border-bottom: 1px solid var(--background-color);
-  background-color: var(--background-color);
-  cursor: initial;
-}
+  /* Two-column feature grid (float avoids inline-block whitespace wrap) */
+  .tabs-benefits .tabs-benefits-panel > div > ul:first-of-type,
+  .tabs-benefits .tabs-benefits-panel > div > ul:nth-of-type(2) {
+    float: left;
+    width: calc(50% - 40px);
+  }
 
-.tabs-benefits .tabs-benefits-panel {
-  margin-top: -1px;
-  padding: 24px;
-  border: 1px solid #dadada;
-  overflow: auto;
-}
+  .tabs-benefits .tabs-benefits-panel > div > ul:first-of-type {
+    margin-right: 80px;
+  }
 
-.tabs-benefits .tabs-benefits-panel[aria-hidden='true'] {
-  display: none;
+  /* Terms + CTA clear the floated feature columns */
+  .tabs-benefits .tabs-benefits-panel > div > p {
+    clear: both;
+  }
+
+  .tabs-benefits .tabs-benefits-panel > div > ul li h3 {
+    font-size: 22px;
+  }
+
+  .tabs-benefits .tabs-benefits-panel a.button:any-link {
+    font-size: 20px;
+    padding: 18px 35px;
+  }
+
+  /* Promo cards two across */
+  .tabs-benefits .tabs-benefits-panel > div > ul:last-of-type {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .tabs-benefits .tabs-benefits-panel > div > ul:last-of-type > li {
+    min-height: 380px;
+    padding: 50px 70px;
+  }
+
+  .tabs-benefits .tabs-benefits-panel > div > ul:last-of-type > li h3 {
+    font-size: 31px;
+  }
+
+  .tabs-benefits .tabs-benefits-panel > div > ul:last-of-type > li a:any-link {
+    font-size: 20px;
+    padding: 18px 35px;
+  }
 }

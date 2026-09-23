@@ -1,46 +1,55 @@
+/* cards-video — video cards row (marutisuzuki "Latest Videos")
+   Values extracted from source computed styles. Scoped to .cards-video. */
+
 .cards-video > ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 
 .cards-video > ul > li {
   background-color: var(--background-color);
+  border-radius: 15px;
 }
 
-.cards-video .cards-video-card-body {
-  margin: 16px 0;
-}
-
+/* ---- thumbnail (image) cell ---- */
 .cards-video .cards-video-card-image {
-  line-height: 0;
   position: relative;
+  line-height: 0;
 }
 
-.cards-video > ul > li img {
+.cards-video .cards-video-card-image p {
+  margin: 0;
+  line-height: 0;
+}
+
+.cards-video .cards-video-card-image a {
+  display: block;
+  line-height: 0;
+}
+
+.cards-video .cards-video-card-image img {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+  display: block;
 }
 
-/* play-button overlay on video thumbnails */
-.cards-video .cards-video-thumb {
-  position: relative;
-}
-
+/* play-button overlay: white ring + white triangle over a subtle dark tint */
 .cards-video .cards-video-thumb::after {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
   transform: translate(-50%, -50%);
+  border: 3px solid rgb(255 255 255 / 95%);
   border-radius: 50%;
-  background-color: rgb(255 255 255 / 90%);
+  background-color: rgb(0 0 0 / 15%);
   pointer-events: none;
 }
 
@@ -52,14 +61,47 @@
   z-index: 1;
   width: 0;
   height: 0;
-  transform: translate(-40%, -50%);
+  transform: translate(-35%, -50%);
   border-style: solid;
-  border-width: 10px 0 10px 18px;
-  border-color: transparent transparent transparent currentcolor;
+  border-width: 11px 0 11px 18px;
+  border-color: transparent transparent transparent rgb(255 255 255 / 95%);
   pointer-events: none;
 }
 
-@media (width >= 600px) {
+/* ---- text cell ---- */
+.cards-video .cards-video-card-body {
+  padding: 25px 25px 35px;
+}
+
+.cards-video .cards-video-card-body h4 {
+  margin: 0 0 10px;
+  font-family: var(--body-font-family);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--brand-color);
+}
+
+.cards-video .cards-video-card-body p {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #000;
+}
+
+/* redundant "Watch video" link — kept for accessibility, styled small */
+.cards-video .cards-video-card-body p:last-child {
+  margin-top: 12px;
+}
+
+.cards-video .cards-video-card-body a:any-link {
+  font-size: 14px;
+  color: var(--link-color);
+}
+
+@media (width >= 900px) {
   .cards-video > ul {
     grid-template-columns: repeat(3, 1fr);
   }

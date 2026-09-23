@@ -1,0 +1,28 @@
+/* Brand design tokens — extracted from marutisuzuki.com */
+:root {
+  /* fonts */
+  --heading-font-family: "Lato", "Lato-fallback", sans-serif;
+  --body-font-family: "Roboto", "Roboto-fallback", sans-serif;
+
+  /* brand colors */
+  --brand-color: #2e3492;          /* Maruti deep blue */
+  --brand-color-dark: #1e2264;
+  --background-color: #fff;
+  --text-color: #212529;
+  --light-color: #f4f5fa;
+  --dark-color: #2e3492;
+  --link-color: #2e3492;
+  --link-hover-color: #1e2264;
+
+  /* spacing */
+  --section-padding: 40px;
+  --nav-height: 41px;
+
+  /* heading sizes (desktop) */
+  --heading-size-xxl: 40px;
+  --heading-size-xl: 40px;
+  --heading-size-l: 24px;
+  --heading-size-m: 22px;
+  --heading-size-s: 18px;
+  --heading-size-xs: 18px;
+}
