@@ -149,8 +149,13 @@ header .nav-brand {
 }
 
 header nav .nav-brand img {
-  width: 128px;
+  width: auto;
+  max-height: 39px;
   height: auto;
+}
+
+header nav .nav-brand p {
+  line-height: 0;
 }
 
 /* sections */
@@ -269,4 +274,51 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ---- Maruti Suzuki header overrides ---- */
+
+/* top-level nav link styling */
+header nav .nav-sections a:any-link {
+  color: var(--text-color);
+  font-size: var(--body-font-size-xs);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+header nav .nav-sections a:hover {
+  color: var(--brand-color);
+  text-decoration: none;
+}
+
+/* tools: contact info + utility icons in a horizontal row */
+header nav .nav-tools p {
+  margin: 0;
+  font-size: var(--body-font-size-xs);
+  white-space: nowrap;
+}
+
+header nav .nav-tools a:any-link {
+  color: var(--brand-color);
+  text-decoration: none;
+}
+
+header nav .nav-tools img {
+  width: auto;
+  max-height: 24px;
+  display: block;
+}
+
+@media (width >= 900px) {
+  header nav .nav-sections ul {
+    gap: 20px;
+  }
+
+  header nav .nav-sections a:any-link {
+    font-size: var(--body-font-size-xs);
+  }
 }

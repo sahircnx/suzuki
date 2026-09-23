@@ -1,5 +1,4 @@
-import { getMetadata } from '../../scripts/aem.js';
-import { loadFragment } from '../fragment/fragment.js';
+import { decorateIcons } from '../../scripts/aem.js';
 
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
@@ -113,10 +112,25 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
-  // load nav as fragment
-  const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
-  const fragment = await loadFragment(navPath);
+  // load nav fragment — metadata-independent dual-fetch:
+  // /content first (localhost / aem up), then root (DA/EDS production)
+  let resp = await fetch('/content/nav.plain.html');
+  if (!resp.ok) resp = await fetch('/nav.plain.html');
+  if (!resp.ok) return;
+  const html = await resp.text();
+
+  // build a fragment container from the fetched markup
+  const fragment = document.createElement('div');
+  fragment.innerHTML = html;
+
+  // nav images are authored relative (images/x) so the content validator can
+  // resolve them on disk; rewrite to a root-absolute path so they load on any
+  // page depth (the header renders on every page).
+  fragment.querySelectorAll('img[src^="images/"]').forEach((img) => {
+    img.src = `/content/${img.getAttribute('src')}`;
+  });
+
+  decorateIcons(fragment);
 
   // decorate nav DOM
   block.textContent = '';
